@@ -1,7 +1,7 @@
 FROM node:8
 
 ENV HOST localhost
-ENV PORT 3000
+ENV PORT 8080
 
 # Create app directory
 RUN mkdir -p /usr/src/app
@@ -27,7 +27,7 @@ WORKDIR ../
 # Bundle app source
 COPY . /usr/src/app
 
-EXPOSE 3000
+EXPOSE 8080
 RUN chmod +x /usr/src/app/docker-entrypoint.sh
 ENTRYPOINT ["/usr/src/app/docker-entrypoint.sh"]
 
