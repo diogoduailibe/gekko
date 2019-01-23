@@ -116,11 +116,13 @@ app
 
 server.timeout = config.api.timeout || 120000;
 server.on('request', app.callback());
+var port = process.env.OPENSHIFT_NODEJS_PORT || config.api.port;
+var ip = process.env.OPENSHIFT_NODEJS_IP || config.api.host
 server.listen(
-  process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || config.api.port,
-  process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || config.api.host,
+  port,
+  ip,
   '::', () => {
-  const host = `${config.ui.host}:${config.ui.port}${config.ui.path}`;
+  const host = `${ip}:${port}${config.ui.path}`;
 
   if(config.ui.ssl) {
     var location = `https://${host}`;
