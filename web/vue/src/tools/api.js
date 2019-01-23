@@ -1,7 +1,7 @@
 // global window.CONFIG
 
 const config = window.CONFIG.ui;
-const endpoint = `${config.host}${config.port === 80 ? '' : `:${config.port}`}${config.path}`;
+const endpoint = `gekko-gekko.1d35.starter-us-east-1.openshiftapps.com/`;
 
 let basePath, restPath, wsPath;
 
