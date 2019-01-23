@@ -117,7 +117,7 @@ app
 server.timeout = config.api.timeout || 120000;
 server.on('request', app.callback());
 var port = process.env.OPENSHIFT_NODEJS_PORT || config.api.port;
-var ip = process.env.OPENSHIFT_NODEJS_IP || config.api.host
+var ip = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
 server.listen(
   port,
   ip,
